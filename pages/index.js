@@ -1,9 +1,17 @@
 import CoachCard from '../src/components/CoachCard';
 import styled from 'styled-components';
-import Topbar from '../src/components/Topbar';
+import HomePage from '../src/components/Home/home';
 
 
 const StyleWrapepr = styled.div`
+height:100vh;
+    background-image:url("/static/images/123.jpg");
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
     .grid-container{
         display : grid;
         padding: 20px;
@@ -28,19 +36,11 @@ const coach = [
     },
 ]
 
-const HomePage = () => {
+const Home = () => {
     return ( <StyleWrapepr>
-                <Topbar/>
-                <div className='grid-container'>
-                {
-                coach.map((item, index) => (
-                    <CoachCard key={index} coach={item}/>
-                ))
-            }
-                </div>
-            
+                <HomePage/>
             </StyleWrapepr>
     )
 }
 
-export default HomePage;
+export default Home;

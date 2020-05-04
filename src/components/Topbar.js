@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Link from 'next/link';
 
 const StyledWrapper = styled.div`
+    
     display:flex;
     justify-content: space-between;
     align-items: center;
@@ -21,13 +22,22 @@ const StyledWrapper = styled.div`
             border-radius: 50%;
         }
     }
+    .menu-container{
+        display: flex;
+        flex-direction:row;
+        justify-content: space-between;
+        align-items:center;
+        width:13%;
+        color:black;
+        font-weight:bold;
+    }
 
     .menu-item{
         cursor: pointer;
     }
 
-    .menu-item.selected{
-        color: var(--orange);
+    .menu-item:hover {
+        color: orange;
     }
 `
 const Topbar = () => {
@@ -39,10 +49,22 @@ const Topbar = () => {
                                 <h4>Taekwondo</h4>
                         </div>
                     </Link>
-                    <div className = 'menu'>
-                        <Link href='/profile'>
-                            <div className={'menu-item selected'}>Profile</div>
-                        </Link>
+                    <div className="menu-container">
+                        <div>
+                            <Link href='/home'>
+                                <div className="menu-item">HOME</div>
+                            </Link>
+                        </div>
+                        <div>
+                            <Link href='/login'>
+                                <div className="menu-item">LOGIN</div>
+                            </Link>
+                        </div>
+                        <div>
+                            <Link href='/signup'>
+                                <div className="menu-item">SIGN UP</div>
+                            </Link>
+                        </div>
                     </div>
                 </StyledWrapper>
         )
